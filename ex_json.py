@@ -1,4 +1,5 @@
 import json
+from json.decoder import JSONDecodeError
 
 print(json.dumps({"name": "John", "age": 30}))
 print(json.dumps(["apple", "bananas"]))
@@ -48,3 +49,15 @@ print(y)
 # # # write the new json
 # with open("new_states.json", "w") as f:
 #     json.dump(data, f, indent=2)
+
+
+# # other example of multilevel JSON
+# data = json.loads("some_source_file.json")
+# usd_rates = dict()
+
+# for item in data["list"]["resources"]:
+#     name = item["resource"]["fields"]["name"]
+#     price = item["resource"]["fields"]["price"]
+#     usd_rates[name] = price
+
+# print(50 * float(usd_rates["USD/INR"]))
