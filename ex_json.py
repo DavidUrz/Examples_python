@@ -32,7 +32,19 @@ x = {
 }
 
 # convert into JSON:
-y = json.dumps(x)
+y = json.dumps(x, indent=2, sort_keys=True)
 
 # the result is a JSON string:
 print(y)
+
+
+# # Open external JSON
+# with open("states.json") as f:
+#     data = json.load(f)
+
+# for state in data["states"]:
+#     print(state["name"], state["abreviation"])
+
+# # # write the new json
+# with open("new_states.json", "w") as f:
+#     json.dump(data, f, indent=2)
